@@ -19,6 +19,12 @@
           
          
             <li>
+              <a href="/laravelApp/public/villages">
+                <i class="now-ui-icons business_bank"></i>
+                <p>Gestion des Villages</p>
+              </a>
+          </li>
+            <li>
                 <a href="/laravelApp/public/gestionnaires">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>Gestion des Gestionnaires</p>
@@ -26,7 +32,7 @@
             </li>
             <li>
                 <a href="./user.html">
-                  <i class="now-ui-icons users_single-02"></i>
+                  <i class="now-ui-icons loader_gear"></i>
                   <p>Gestion des Comptes</p>
                 </a>
             </li>
