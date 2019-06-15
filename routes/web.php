@@ -43,8 +43,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/villages', 'VillageController@index')->name('villages');
-Route::resource('layout.village', 'VillageController');
+
+// Route::get('/villages', 'VillageController@index')->name('villages');
+
+Route::get('/clients/list', 'ClientsController@list')->name('clients.list');
+
+Route::resource('villages', 'VillageController');
+Route::resource('clients', 'ClientsController');
 
 Auth::routes();
 

@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table">
+                    <table id="tableVillage" class="table">
                       <thead class=" text-primary">
                         <th>
                           ID
@@ -49,9 +49,13 @@
                           <td>
                                 {{$village->chef->user->name."  ".$village->chef->user->firstname}}
                           </td>
-                         {{--  <td>
-                              <a class="btn btn-primary" href={{route('villages.show',['village'=>$village->id])}}><i class="material-icons">edit</i> </a>
-                          </td> --}}
+                          <td>
+                            {{$village->commune->nom}}
+                          </td>
+                          <td>
+                              <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit </a>
+                              {{-- href={{route('villages.show',['village'=>$village->id])}} --}}
+                          </td>
                    
                         </tr>
                         @endforeach
@@ -63,6 +67,14 @@
                 </div>
               </div>
             </div>
+          @push('layout.scripts')
+            <script src="{{ asset('assets/js/jquery.dataTables.min.js')  }}"></script>
+              <script>
+                $(document).ready( function () {
+                    $('#tableVillage').DataTable();
+                } );
+            </script>
+          @endpush
             <div class="col-md-12">
               {{-- <div class="card card-plain">
                 <div class="card-header card-header-primary">
@@ -201,4 +213,6 @@
           </div>
         </div>
       </div>
+
+   
       @endsection
