@@ -24,6 +24,12 @@
                 <p>Gestion des Villages</p>
               </a>
           </li>
+          <li>
+            <a href="{{  asset('/clients') }}">
+              <i class="now-ui-icons users_single-02"></i>
+              <p>Gestion des Clients</p>
+            </a>
+        </li>
             <li>
                 <a href="/laravelApp/public/gestionnaires">
                   <i class="now-ui-icons users_single-02"></i>

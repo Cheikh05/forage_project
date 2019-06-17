@@ -17,6 +17,7 @@
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/jquery.dataTables.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/jquery.tab.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.3.0') }}" rel="stylesheet" />
         
         <!-- CSS Just for demo purpose, don't include it in your project -->

@@ -16,8 +16,14 @@ class VillageController extends Controller
     {
         $villages = Village::all()->load(['chef.user', 'commune.arrondissement.departement.region']);
         //->paginate(10);
+        return view('layout.village.index', compact('villages'));
+    }
 
 
+    public function select()
+    {
+        $villages = Village::all()->load(['chef.user', 'commune.arrondissement.departement.region']);
+        //->paginate(10);
         return view('layout.village.index', compact('villages'));
     }
 

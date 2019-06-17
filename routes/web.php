@@ -46,8 +46,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/villages', 'VillageController@index')->name('villages');
 
-Route::get('/clients/list', 'ClientsController@list')->name('clients.list');
+Route::get('/clients/selectVillage', function () {
+    return view("layout.client.selectVillage");
+})->name('client.selectVillage');
 
+Route::get('/clients/list', 'ClientsController@list')->name('clients.list');
+Route::get('/villages/select', 'VillageController@select')->name('villages.select');
 Route::resource('villages', 'VillageController');
 Route::resource('clients', 'ClientsController');
 

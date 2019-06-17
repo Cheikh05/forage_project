@@ -53,7 +53,7 @@
                             {{$village->commune->nom}}
                           </td>
                           <td>
-                              <a class="btn btn-primary"><i class="fa fa-edit"></i> Edit </a>
+                              <a class="btn btn-primary"><i class="fa fa-add"></i> Select </a>
                               {{-- href={{route('villages.show',['village'=>$village->id])}} --}}
                           </td>
                    
