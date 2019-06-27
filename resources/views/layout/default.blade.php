@@ -21,6 +21,9 @@
        
       <div class="row">
   
+
+          
+
          {{-- Liste des Utilisateurs --}}
          @include('layout.gestionnaire.collections')
         </div>

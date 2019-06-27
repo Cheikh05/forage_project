@@ -10,7 +10,7 @@
               </button>
             </div>
             @section('page')
-                 <a class="navbar-brand" href="#">Vue d'ensemble</a>
+                 <a class="navbar-brand" href="#">Sen Forage</a>
             @Show
            
           </div>
@@ -20,16 +20,17 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-         {{--    <form>
+            
+            <form class="col-5">
               <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Rec...">
+                <input type="text" value="" class="form-control" placeholder="Rechercher">
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <i class="now-ui-icons ui-1_zoom-bold"></i>
                   </div>
                 </div>
               </div>
-            </form> --}}
+            </form>
             <ul class="navbar-nav">
             {{--   <li class="nav-item">
                 <a class="nav-link" href="#pablo">
@@ -51,14 +52,14 @@
                   <a class="dropdown-item" href="#">Gestion des paramettres</a>
                 </div>
               </li>
-           {{--    <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
                   </p>
                 </a>
-              </li> --}}
+              </li>
             </ul>
           </div>
         </div>

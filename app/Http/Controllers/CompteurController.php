@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Client;
+use App\Compteur;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
-class ClientsController extends Controller
+class CompteurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +15,14 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        return view('layout.client.index', compact('clients'));
+        return view('layout.compteur.index');
     }
 
     public function list(Request $request)
-   {
-       $clients=Client::with('user')->get();
-       return Datatables::of($clients)->make(true);
-   }
-
+    {
+        $compteurs=Compteur::with('abonnements.client.user')->get();
+        return Datatables::of($compteurs)->make(true);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -49,10 +48,10 @@ class ClientsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Client  $client
+     * @param  \App\Compteur  $compteur
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show(Compteur $compteur)
     {
         //
     }
@@ -60,10 +59,10 @@ class ClientsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Client  $client
+     * @param  \App\Compteur  $compteur
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit(Compteur $compteur)
     {
         //
     }
@@ -72,10 +71,10 @@ class ClientsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $client
+     * @param  \App\Compteur  $compteur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, Compteur $compteur)
     {
         //
     }
@@ -83,10 +82,10 @@ class ClientsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Client  $client
+     * @param  \App\Compteur  $compteur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy(Compteur $compteur)
     {
         //
     }

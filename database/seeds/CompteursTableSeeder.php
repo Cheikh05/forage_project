@@ -11,6 +11,6 @@ class CompteursTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Compteur::class,20)->create();
     }
 }

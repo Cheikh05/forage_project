@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Village;
+use App\Comptable;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
-class VillageController extends Controller
+class ComptableController extends Controller
 {
-    public function list()
-    {
-        $villages=Village::get()->load(['commune.arrondissement.departement.region']);
 
-        return Datatables::of($villages)->make(true);
-    }
+
+
+ 
+
     /**
      * Display a listing of the resource.
      *
@@ -21,12 +20,14 @@ class VillageController extends Controller
      */
     public function index()
     {
-        $villages = Village::all()->load(['chef.user', 'commune.arrondissement.departement.region']);
-        //->paginate(10);
-        return view('layout.village.index', compact('villages'));
+        return view("layout.comptable.index");
     }
 
-   
+    public function list(Request $request)
+    {
+        $comptables = Comptable::with('user')->get();
+        return Datatables::of($comptables)->make(true);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,10 +53,10 @@ class VillageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Village  $village
+     * @param  \App\Comptable  $comptable
      * @return \Illuminate\Http\Response
      */
-    public function show(Village $village)
+    public function show(Comptable $comptable)
     {
         //
     }
@@ -63,10 +64,10 @@ class VillageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Village  $village
+     * @param  \App\Comptable  $comptable
      * @return \Illuminate\Http\Response
      */
-    public function edit(Village $village)
+    public function edit(Comptable $comptable)
     {
         //
     }
@@ -75,10 +76,10 @@ class VillageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Village  $village
+     * @param  \App\Comptable  $comptable
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Village $village)
+    public function update(Request $request, Comptable $comptable)
     {
         //
     }
@@ -86,10 +87,10 @@ class VillageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Village  $village
+     * @param  \App\Comptable  $comptable
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Village $village)
+    public function destroy(Comptable $comptable)
     {
         //
     }

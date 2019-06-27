@@ -10,9 +10,8 @@
                     <div class="card-header card-header-primary">
                         <h4 class="card-title ">SENFORAGE</h4>
                         <p class="card-category"> Clients
-                            <!-- <a href="{{route('clients.create')}}"> -->
                             <!-- <div class="btn btn-warning"> <i class="material-icons">add</i></div> -->
-                            <a href="{{ asset('user/client') }}" class="col-md-6">
+                            <a href="{{ route('clients.seletVillage') }}" class="col-md-6">
                                 <button type="submit" class="btn btn-block btn-primary"><i class="fas fa-user-times"></i> Nouveau Client</button>
                             </a>
                             <!--  </a> -->

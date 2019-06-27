@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ConsommationsTableSeeder extends Seeder
+class UtilisateurSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class ConsommationsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Consommation::class,120)->create(['factures_id'=> null]);
+        factory(\App\Utilisateur::class,20)->create();
     }
 }

@@ -11,6 +11,6 @@ class FacturesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Facture::class,20)->create();
     }
 }
