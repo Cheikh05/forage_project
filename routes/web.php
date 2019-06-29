@@ -1,4 +1,5 @@
 <?php
+
 use App\Village;
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +12,10 @@ use App\Village;
 |
 */
 
+
+Route::get('/test', function () {
+    return view('welcome');
+});
 Route::get('/', function () {
     $villages = Village::get()->load(['chef.user', 'commune.arrondissement.departement.region'])->take(4);
     return view('layout.default', compact('villages'));
@@ -57,17 +62,19 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 
 Route::get('/clients/list', 'ClientController@list')->name('clients.list');
-Route::get('/gestionnaire/list', 'GestionnaireController@list')->name('gestionnaires.list');
-Route::get('/agent/list', 'AgentController@list')->name('agents.list');
-Route::get('/facture/list', 'AgentController@list')->name('factures.list');
-Route::get('/compteur/list', 'CompteurController@list')->name('compteurs.list');
+Route::get('/gestionnaires/list', 'GestionnaireController@list')->name('gestionnaires.list');
+Route::get('/agents/list', 'AgentController@list')->name('agents.list');
+Route::get('/factures/list', 'FactureController@list')->name('factures.list');
+Route::get('/factures/show', 'FactureController@show')->name('factures.show');
+Route::get('/compteurs/list', 'CompteurController@list')->name('compteurs.list');
+
 Route::get('/consommation/list', 'ConsommationController@list')->name('consommations.list');
 Route::get('/clients/selecVillage', 'ClientController@select')->name('clients.seletVillage');
 Route::get('/villages/list', 'VillageController@list')->name('villages.list');
-Route::get('/compteur/list', 'CompteurController@list')->name('compteurs.list');
 Route::resource('villages', 'VillageController');
 Route::resource('clients', 'ClientController');
 Route::resource('compteurs', 'CompteurController');
+
 Route::resource('gestionnaires', 'GestionnaireController');
 Route::resource('factures', 'FactureController');
 Route::resource('agents', 'AgentController');
@@ -77,6 +84,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/comptables/list', 'ComptableController@list')->name('comptables.list');
 Route::resource('comptables', 'ComptableController');
+
+Route::get('/abonnements/list', 'AbonnementController@list')->name('abonnements.list');
+Route::get('/abonnements/selectcompteur', 'AbonnementController@selectcompteur')->name('abonnements.selectcompteur');
+Route::get('/abonnements/selectclient', 'AbonnementController@selectclient')->name('abonnements.selectclient');
+Route::get('/compteurs/listfree', 'CompteurController@listfree')->name('compteurs.listfree');
+Route::resource('abonnements', 'AbonnementController');
+
 
 
 Route::get('loginfor/{rolename?}', function ($rolename = null) {
@@ -92,3 +106,7 @@ Route::get('loginfor/{rolename?}', function ($rolename = null) {
     }
     return redirect()->route('login');
 })->name('loginfor');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

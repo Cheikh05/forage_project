@@ -10,14 +10,14 @@
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">SENFORAGE</h4>
                   <p class="card-category"> Liste de tous les Factures 
-                    <a href="{{ route('compteurs.create') }}" class="col-md-6">
+                    <a href="{{ route('factures.create') }}" class="col-md-6">
                       <button type="submit" class="btn btn-block btn-primary"><i class="fas fa-user-times"></i> Ajouter un nouvelle facture</button>
                   </a>
                   </p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table" id="table-facture">
+                    <table class="table" id="table-factures">
                       <thead class=" text-primary">
                         <th>
                           ID
@@ -62,7 +62,7 @@
       @push('scripts')
       <script type="text/javascript">
         $(document).ready(function() {
-            $('#table-facture').DataTable({
+            $('#table-factures').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "ajax": "{{ route('factures.list') }}",
@@ -105,7 +105,7 @@
                             return '<a href=' + url_e + '  class=" btn btn-primary " ><i class="fa fa-edit"></i></a>' +
                                 ' <a class="btn btn-danger" href=' + url_d + '><i class="fa-trash"></i></a>';
                         },
-                        "targets": 4
+                        "targets": 6
                     },
                     // {
                     //     "data": null,

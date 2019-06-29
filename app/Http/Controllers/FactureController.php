@@ -52,7 +52,7 @@ class FactureController extends Controller
      */
     public function show(Facture $facture)
     {
-        //
+        return view('layout.facture.show',compact('facture'));
     }
 
     /**
